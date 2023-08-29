@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <style>
+    body {
+      padding: 20px;
+    }
+    .ui.grid {
+      margin-top: 20px;
+    }
+    .item-list {
+      border-right: 1px solid #ddd;
+      padding-right: 20px;
+    }
+    .item-list h2 {
+      margin-top: 0;
+    }
+    .item {
+      margin-bottom: 20px;
+    }
+    .amount-list {
+      padding-left: 20px;
+    }
+    .amount-list h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="ui container">
+    <h1>Checkout Summary</h1>
+    <div class="ui grid">
+      <div class="eight wide column item-list">
+        <h2>Items for Sale</h2>
+        <div class="item">
+          <div class="ui header">Product 1</div>
+          <p>Description of Product 1.</p>
+        </div>
+      </div>
+      <div class="eight wide column amount-list">
+        <h2>Amount</h2>
+        <h1>$310</h1>
+      </div>
+    </div>
+    <br>
+    <div class="ui icon message">
+        <i class="notched circle loading icon"></i>
+        <div class="content">
+          <div class="header">
+            Just one second
+          </div>
+          <p>We're processing your payment.</p>
+        </div>
+      </div>
+  </div>
+  <input name="paymentCode" style="opacity: 0;" id="paymentCode" value="" />
+</body>
+<script>
+     $("#paymentCode").focus();
+    $('#paymentCode').bind('focusout', function(e) {
+        console.log("Focus out!");
+        $("#paymentCode").focus();
+    });
+
+    $('#paymentCode').change(function() {
+        console.log($("#paymentCode").val());
+    });
+</script>
+</html>
